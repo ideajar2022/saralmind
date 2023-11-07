@@ -1,0 +1,21 @@
+RewriteEngine On
+
+### WWW & HTTPS
+
+# ensure www and https
+RewriteCond %{HTTP_HOST} !^www\. [NC,OR]
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+### Remove "public" from URL
+
+# internally add "public" to the URL path
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteRule ^(.*)$ /public/$1 [L]
+
+### Handle Laravel Routing
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [L]
