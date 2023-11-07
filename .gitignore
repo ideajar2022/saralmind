@@ -1,5 +1,6 @@
 /node_modules
 /public/hot
+/public/premiumAsset
 /public/uploads/
 /public/storage
 /storage/*.key
@@ -15,3 +16,4 @@ public/uploads
 public/hot/
 storage/
 dandelion.yml
+/app.zip

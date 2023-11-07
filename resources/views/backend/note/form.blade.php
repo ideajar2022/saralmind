@@ -93,7 +93,7 @@
 
             <div class="form-group">
               <label for="order">Order</label>
-              <input type="number" name="order" class="form-control" value="{{ old('order',$note->order) }}" min="0" max="100">
+              <input type="number" name="order" class="form-control" value="{{ old('order',$note->order) }}" step="0.01" min="0.00" max="100.00">
               @if ($errors->has('order'))
                 <span class="text-red" role="alert">
                     <strong>{{ $errors->first('order') }}</strong>
