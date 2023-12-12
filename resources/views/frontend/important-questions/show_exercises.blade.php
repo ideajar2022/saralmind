@@ -71,7 +71,7 @@
                     <ol>           
                         @foreach($exercises as $exercise)
                             @if($exercise->type == 'VERYSHORT')
-                                <div class="alert alert-success" role="alert">
+                                <div class="alert alert-success" role="alert" style="padding-left: 30px;">
                                     <li>
                                         <b>{{ strip_tags($exercise->question) }}</b> 
                                     </li>
@@ -86,7 +86,7 @@
                     <ol>            
                         @foreach($exercises as $exercise)
                             @if($exercise->type == 'SHORT')
-                            <div class="alert alert-success" role="alert">
+                            <div class="alert alert-success" role="alert" style="padding-left: 30px;">
                                 <li>
                                     <b>{{ strip_tags($exercise->question) }}</b> 
                                 </li>    
@@ -101,7 +101,7 @@
                     <ol>         
                         @foreach($exercises as $exercise)
                             @if($exercise->type == 'LONG')
-                            <div class="alert alert-success" role="alert">
+                            <div class="alert alert-success" role="alert" style="padding-left: 30px;">
                                 <li>
                                     <b>{{ strip_tags($exercise->question) }}</b> 
                                 </li>    

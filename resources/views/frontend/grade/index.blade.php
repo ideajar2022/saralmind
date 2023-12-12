@@ -53,7 +53,13 @@
                     <div class="row w-100 my-5 justify-content-center">
                         @foreach($faculty->grades as $grade)
                         <div class="col-sm-12 col-md-3 col-lg-3 text-center">
-                            <a href="{{ route('class',[@$faculty->program->slug,$faculty->slug,$grade->slug])}}" class="single-course">
+                            <!-- <a href="{{ route('class',[@$faculty->program->slug,$faculty->slug,$grade->slug])}}" class="single-course"> -->
+
+                                <!-- grade 8 and grade 9 coming soon -->
+                                <a href="{{ ($grade->slug == 'class-8' || $grade->slug == 'class-9') ? '#' : route('class', [$faculty->program->slug, $faculty->slug, $grade->slug]) }}" class="single-course">
+                                    <!-- Your link content here -->
+                                
+
                                 <div class="inner-course-wrap">
                                     <div class="icon-wrapper">
                                         <!-- <i class="fa fa-book" aria-hidden="true"></i> -->
@@ -61,12 +67,19 @@
                                     </div>
                                     <h3>{{ $grade->name }}</h3>
                                 </div>
+
+                                @if($grade->slug=='class-8'||$grade->slug=='class-9')
+                                <span>COMING SOON <i class="fa fa-angle-right"></i></span>
+                                @else
                                 <span>View Detail <i class="fa fa-angle-right"></i></span>
+                                @endif
+
                             </a>
                         </div>
                         @endforeach
 
-                        <!-- important questions -->
+
+                        <!-- important questions if faculty=pcl-nursing -->
                         @if($faculty->slug == "pcl-nursing")
                         <div style="display: flex; justify-content: center;">
                             <div class="col-sm-12 col-md-3 col-lg-3 text-center">

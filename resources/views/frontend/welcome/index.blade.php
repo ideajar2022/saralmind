@@ -77,7 +77,6 @@
             </div>
 
             @foreach($faculties as $faculty)
-            @if($faculty->slug!="high-school-class-8-to-12")
             <div class="col-lg-4 col-12 start-course-card">
                 <a href="{{ route('faculty',[$faculty->program->slug,$faculty->slug])}}">
                     <div class="main-wrapper">
@@ -94,7 +93,6 @@
                     </div>
                 </a>    
             </div>
-            @endif
             @endforeach
 
         </div>
